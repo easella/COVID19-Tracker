@@ -25,7 +25,7 @@ function App() {
     const [mapCountries, setMapCountries] = useState([]);
     const [casesType, setCasesType] = useState("cases");
     useEffect(() => {
-        fetch("https://disease.sh/v3/covid-19/all")
+        fetch("https://messysaddlebrownportablesoftware-16.ontheroadtovote.repl.co/v3/covid-19/all")
             .then((response) => response.json())
             .then((data) => {
                 setCountryInfo(data);
@@ -34,7 +34,7 @@ function App() {
 
     useEffect(() => {
         const getCountriesData = async() => {
-            await fetch("https://disease.sh/v3/covid-19/countries")
+            await fetch("https://messysaddlebrownportablesoftware-16.ontheroadtovote.repl.co/v3/covid-19/countries")
                 .then((response) => response.json())
                 .then((data) => {
                     const countries = data.map((country) => ({
@@ -54,8 +54,8 @@ function App() {
         setCountry(countryCode);
         const url =
             countryCode === "worldwide" ?
-            "https://disease.sh/v3/covid-19/all" :
-            `https://disease.sh/v3/covid-19/countries/${countryCode}`;
+            "https://messysaddlebrownportablesoftware-16.ontheroadtovote.repl.co/v3/covid-19/all" :
+            `https://messysaddlebrownportablesoftware-16.ontheroadtovote.repl.co/v3/covid-19/countries/${countryCode}`;
         await fetch(url)
             .then((response) => response.json())
             .then((data) => {
